@@ -6,6 +6,8 @@ cohost-api is in very early development!
 
 ## Usage
 
+`npm install cohost-api`
+
 ```js
 import { Client, PostBuilder } from "cohost-api";
 
