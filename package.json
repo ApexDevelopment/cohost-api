@@ -1,0 +1,31 @@
+{
+  "name": "cohost-api",
+  "version": "0.0.1",
+  "description": "An unofficial tRPC-based wrapper API for Cohost.org",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ApexDevelopment/cohost-api.git"
+  },
+  "keywords": [
+    "api"
+  ],
+  "author": "Apex",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ApexDevelopment/cohost-api/issues"
+  },
+  "homepage": "https://github.com/ApexDevelopment/cohost-api#readme",
+  "devDependencies": {
+    "@types/node": "^20.11.20",
+    "prettier": "^3.2.5",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@trpc/client": "^11.0.0-next-beta.294",
+    "zod": "^3.22.4"
+  }
+}
