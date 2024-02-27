@@ -3,6 +3,34 @@ import { z } from "zod";
 
 const posts = router({
   isLiked: t.procedure.query(() => {}),
+  create: t.procedure
+    .input(
+      z.object({
+        projectHandle: z.string(),
+        content: z.object({
+          postState: z.number(),
+          headline: z.string(),
+          adultContent: z.boolean(),
+          blocks: z.array(
+            z.object({
+              type: z.string(),
+              markdown: z.optional(
+                z.object({
+                  content: z.string(),
+                }),
+              ),
+            }),
+          ),
+        }),
+        cws: z.array(z.string()),
+        tags: z.array(z.string()),
+      }),
+    )
+    .mutation(() => {
+      return {
+        postId: 0,
+      };
+    }),
   update: t.procedure
     .input(
       z.object({
