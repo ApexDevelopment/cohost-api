@@ -24,7 +24,17 @@ async function demo() {
   // Send to Cohost
   user?.projects[0].createDraft(post.build()); // or use .createPost() to publish it immediately
 }
+
+demo(); // Check your Cohost page!
 ```
+
+## Glossary
+
+| Term    | Definition                                                                                                |
+| ------- | --------------------------------------------------------------------------------------------------------- |
+| Project | A page viewable as a Cohost profile with an @handle.                                                      |
+| User    | A Cohost account with an email address and password. Users can have multiple projects.                    |
+| Draft   | A post which has not been published, but still belongs to a project, and can be viewed via a direct link. |
 
 ## Reasons not to use this (yet)
 
