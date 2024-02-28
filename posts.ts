@@ -3,6 +3,25 @@ import { z } from "zod";
 
 const posts = router({
   isLiked: t.procedure.query(() => {}),
+  profilePosts: t.procedure
+    .input(
+      z.object({
+        projectHandle: z.string(),
+        page: z.number(),
+        options: z.object({
+          pinnedPostsAtTop: z.boolean(),
+          hideReplies: z.boolean(),
+          hideShares: z.boolean(),
+          hideAsks: z.boolean(),
+          viewingOnProjectPage: z.boolean(),
+        }),
+      }),
+    )
+    .query(() => {
+      return {
+        posts: [{}],
+      };
+    }),
   create: t.procedure
     .input(
       z.object({
@@ -53,6 +72,14 @@ const posts = router({
         }),
         cws: z.array(z.string()),
         tags: z.array(z.string()),
+      }),
+    )
+    .mutation(() => {}),
+  delete: t.procedure
+    .input(
+      z.object({
+        projectHandle: z.string(),
+        postId: z.number(),
       }),
     )
     .mutation(() => {}),

@@ -1,10 +1,11 @@
 {
   "name": "cohost-api",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "An unofficial tRPC-based wrapper API for Cohost.org",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tsc && node tester.js",
+    "docs": "rimraf temp-docs && typedoc index.ts --commentStyle block --plugin typedoc-plugin-markdown --theme markdown --out temp-docs && concat-md --toc --decrease-title-levels --ignore README.md,modules.md --dir-name-as-title temp-docs > reference.md && rimraf temp-docs"
   },
   "repository": {
     "type": "git",
@@ -21,7 +22,11 @@
   "homepage": "https://github.com/ApexDevelopment/cohost-api#readme",
   "devDependencies": {
     "@types/node": "^20.11.20",
+    "concat-md": "^0.5.1",
     "prettier": "^3.2.5",
+    "rimraf": "^5.0.5",
+    "typedoc": "^0.25.9",
+    "typedoc-plugin-markdown": "^3.17.1",
     "typescript": "^5.3.3"
   },
   "dependencies": {

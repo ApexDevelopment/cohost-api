@@ -28,16 +28,39 @@ async function demo() {
 demo(); // Check your Cohost page!
 ```
 
+## API Reference
+
+The API reference can be found in [this document](reference.md).
+
+## What works, and what doesn't
+
+### Working
+
+- Getting your projects' profile information
+- Creating posts & post drafts
+- Editing existing posts & post drafts
+- Liking and unliking posts
+
+### Not working
+
+- Getting a list of a project's posts (coming soon)
+- Editing a project's profile information
+- Sharing other users' posts to your project (i.e. reblogging)
+- Getting the list of followers for a project
+- Getting a project's notifications
+- Anything else not explicitly mentioned
+
 ## Glossary
 
-| Term    | Definition                                                                                                |
-| ------- | --------------------------------------------------------------------------------------------------------- |
-| Project | A page viewable as a Cohost profile with an @handle.                                                      |
-| User    | A Cohost account with an email address and password. Users can have multiple projects.                    |
-| Draft   | A post which has not been published, but still belongs to a project, and can be viewed via a direct link. |
+| Term    | Definition                                                                                                                                    |
+| ------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| Project | A page viewable as a Cohost profile with an @handle.                                                                                          |
+| User    | A Cohost account with an email address and password. Users can have multiple projects, the same way a Tumblr account can have multiple blogs. |
+| Draft   | A post which has not been published, but still belongs to a project, and can be viewed via a direct link.                                     |
 
 ## Reasons not to use this (yet)
 
 - The Cohost tRPC API is undocumented and not meant for public use.
 - The Cohost tRPC API can change at any time and break this package.
 - This package is in flux and breaking changes will happen all the time until it is stable.
+- The documentation for this package is incomplete, so using it might be confusing.
