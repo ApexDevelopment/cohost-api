@@ -40,13 +40,14 @@ The API reference can be found in [this document](reference.md).
 - Creating posts & post drafts
 - Editing existing posts & post drafts
 - Liking and unliking posts
+- Getting a list of a project's posts
 
 ### Not working
 
-- Getting a list of a project's posts (coming soon)
 - Editing a project's profile information
 - Sharing other users' posts to your project (i.e. reblogging)
 - Getting the list of followers for a project
+- Getting the list of projects followed by your project
 - Getting a project's notifications
 - Anything else not explicitly mentioned
 
