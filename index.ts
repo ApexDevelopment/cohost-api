@@ -286,6 +286,10 @@ class Project {
    * @returns The post with its postId set.
    */
   async createPost(post: Post) {
+    if (!this.trpc) {
+      throw new Error("User does not have ownership of this project.");
+    }
+
     post.projectHandle = this.handle;
     post.content.postState = PostState.PUBLISHED;
     post.postId = (await this.trpc.posts.create.mutate(post)).postId;
@@ -298,6 +302,10 @@ class Project {
    * @returns The post with its postId set.
    */
   async createDraft(post: Post) {
+    if (!this.trpc) {
+      throw new Error("User does not have ownership of this project.");
+    }
+
     post.projectHandle = this.handle;
     post.content.postState = PostState.DRAFT;
     post.postId = (await this.trpc.posts.create.mutate(post)).postId;
@@ -309,6 +317,10 @@ class Project {
    * @param post The post or ID of the post to delete.
    */
   async deletePost(post: Post | number) {
+    if (!this.trpc) {
+      throw new Error("User does not have ownership of this project.");
+    }
+
     let postId = post instanceof Post ? post.postId : post;
     await this.trpc.posts.delete.mutate({
       projectHandle: this.handle,
@@ -322,6 +334,10 @@ class Project {
    * @param newPost The new post data.
    */
   async updatePost(postToUpdate: Post | number, newPost: Post) {
+    if (!this.trpc) {
+      throw new Error("User does not have ownership of this project.");
+    }
+
     let postId =
       postToUpdate instanceof Post ? postToUpdate.postId : postToUpdate;
     await this.trpc.posts.update.mutate({
@@ -340,6 +356,10 @@ class Project {
    * @param draftPost The draft post to publish.
    */
   async publishDraft(draftPost: Post) {
+    if (!this.trpc) {
+      throw new Error("User does not have ownership of this project.");
+    }
+
     await this.trpc.posts.update.mutate({
       projectHandle: this.handle,
       postId: draftPost.postId,
@@ -354,6 +374,10 @@ class Project {
    * @param post The post to like.
    */
   async likePost(post: Post | number) {
+    if (!this.trpc) {
+      throw new Error("User does not have ownership of this project.");
+    }
+
     let postId = post instanceof Post ? post.postId : post;
     await this.trpc.relationships.like.mutate({
       fromProjectId: this.id,
@@ -366,10 +390,66 @@ class Project {
    * @param post The post to unlike.
    */
   async unlikePost(post: Post | number) {
+    if (!this.trpc) {
+      throw new Error("User does not have ownership of this project.");
+    }
+
     let postId = post instanceof Post ? post.postId : post;
     await this.trpc.relationships.unlike.mutate({
       fromProjectId: this.id,
       toPostId: postId,
+    });
+  }
+
+  /**
+   * Gets a page of posts from the project. The Cohost API returns 20 posts per page.
+   * @param page The page of posts to get. Defaults to 0.
+   * @param options Options for filtering the returned posts.
+   * @returns An array of TimelinePosts from the project.
+   */
+  async getPosts(
+    page: number = 0,
+    options: {
+      pinnedPostsAtTop: boolean;
+      hideReplies: boolean;
+      hideShares: boolean;
+      hideAsks: boolean;
+    } = {
+      pinnedPostsAtTop: true,
+      hideReplies: false,
+      hideShares: false,
+      hideAsks: false,
+    },
+  ) {
+    let response = await this.trpc.posts.profilePosts.query({
+      projectHandle: this.handle,
+      page,
+      options,
+    });
+
+    return response.posts.map((post: any) => {
+      return new TimelinePost(
+        this.handle,
+        post.postId,
+        post.postState,
+        post.headline,
+        post.effectiveAdultContent,
+        post.blocks,
+        post.cws,
+        post.tags,
+        post.publishedAt,
+        post.filename,
+        post.numComments,
+        post.pinned,
+        post.commentsLocked,
+        post.sharesLocked,
+        post.plainTextBody,
+        this,
+        post.singlePostPageUrl,
+        post.isLiked,
+        post.responseToAskId,
+        post.hasCohostPlus,
+      );
     });
   }
 }
