@@ -324,12 +324,28 @@ class Project {
   async updatePost(postToUpdate: Post | number, newPost: Post) {
     let postId =
       postToUpdate instanceof Post ? postToUpdate.postId : postToUpdate;
-    return this.trpc.posts.update.mutate({
+    await this.trpc.posts.update.mutate({
       projectHandle: this.handle,
       postId,
       content: newPost.content,
       cws: newPost.content.cws,
       tags: newPost.content.tags,
+    });
+  }
+
+  /**
+   * Publishes a post from the project's drafts.
+   *
+   * In the future, this function will also accept a number as the first argument, which will be the ID of the draft post to publish.
+   * @param draftPost The draft post to publish.
+   */
+  async publishDraft(draftPost: Post) {
+    await this.trpc.posts.update.mutate({
+      projectHandle: this.handle,
+      postId: draftPost.postId,
+      content: draftPost.content,
+      cws: draftPost.content.cws,
+      tags: draftPost.content.tags,
     });
   }
 

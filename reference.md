@@ -69,7 +69,7 @@ Creates a new Cohost API client. Requires no arguments.
 
 ##### Defined in
 
-[index.ts:401](https://github.com/ApexDevelopment/cohost-api/blob/f4cad2e/index.ts#L401)
+[index.ts:417](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L417)
 
 ### Properties
 
@@ -81,7 +81,7 @@ Whether the client is logged in.
 
 ##### Defined in
 
-[index.ts:393](https://github.com/ApexDevelopment/cohost-api/blob/f4cad2e/index.ts#L393)
+[index.ts:409](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L409)
 
 ___
 
@@ -93,7 +93,7 @@ The session token for the client.
 
 ##### Defined in
 
-[index.ts:391](https://github.com/ApexDevelopment/cohost-api/blob/f4cad2e/index.ts#L391)
+[index.ts:407](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L407)
 
 ___
 
@@ -105,7 +105,7 @@ The currently logged in user. Once logged in, can be used to access the user's i
 
 ##### Defined in
 
-[index.ts:396](https://github.com/ApexDevelopment/cohost-api/blob/f4cad2e/index.ts#L396)
+[index.ts:412](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L412)
 
 ### Methods
 
@@ -130,7 +130,7 @@ The logged in User, or null if the login failed.
 
 ##### Defined in
 
-[index.ts:423](https://github.com/ApexDevelopment/cohost-api/blob/f4cad2e/index.ts#L423)
+[index.ts:439](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L439)
 
 
 <a name="classespostmd"></a>
@@ -172,7 +172,7 @@ This class is not used for creating posts. Instead, use the PostBuilder class to
 
 ##### Defined in
 
-[index.ts:26](https://github.com/ApexDevelopment/cohost-api/blob/f4cad2e/index.ts#L26)
+[index.ts:26](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L26)
 
 ___
 
@@ -182,7 +182,7 @@ ___
 
 ##### Defined in
 
-[index.ts:25](https://github.com/ApexDevelopment/cohost-api/blob/f4cad2e/index.ts#L25)
+[index.ts:25](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L25)
 
 ___
 
@@ -192,7 +192,7 @@ ___
 
 ##### Defined in
 
-[index.ts:24](https://github.com/ApexDevelopment/cohost-api/blob/f4cad2e/index.ts#L24)
+[index.ts:24](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L24)
 
 
 <a name="classespostbuildermd"></a>
@@ -246,7 +246,7 @@ Creates a new PostBuilder, used for easily constructing a Post object.
 
 ##### Defined in
 
-[index.ts:148](https://github.com/ApexDevelopment/cohost-api/blob/f4cad2e/index.ts#L148)
+[index.ts:148](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L148)
 
 ### Methods
 
@@ -271,7 +271,7 @@ The PostBuilder object, for chaining.
 
 ##### Defined in
 
-[index.ts:159](https://github.com/ApexDevelopment/cohost-api/blob/f4cad2e/index.ts#L159)
+[index.ts:159](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L159)
 
 ___
 
@@ -295,7 +295,7 @@ The PostBuilder object, for chaining.
 
 ##### Defined in
 
-[index.ts:181](https://github.com/ApexDevelopment/cohost-api/blob/f4cad2e/index.ts#L181)
+[index.ts:181](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L181)
 
 ___
 
@@ -319,7 +319,7 @@ The PostBuilder object, for chaining.
 
 ##### Defined in
 
-[index.ts:171](https://github.com/ApexDevelopment/cohost-api/blob/f4cad2e/index.ts#L171)
+[index.ts:171](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L171)
 
 ___
 
@@ -343,7 +343,7 @@ The PostBuilder object, for chaining.
 
 ##### Defined in
 
-[index.ts:191](https://github.com/ApexDevelopment/cohost-api/blob/f4cad2e/index.ts#L191)
+[index.ts:191](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L191)
 
 ___
 
@@ -361,7 +361,7 @@ The Post object.
 
 ##### Defined in
 
-[index.ts:200](https://github.com/ApexDevelopment/cohost-api/blob/f4cad2e/index.ts#L200)
+[index.ts:200](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L200)
 
 
 <a name="classesprojectmd"></a>
@@ -398,6 +398,7 @@ Do not instantiate this class directly. Projects can only be obtained from the A
 - [createPost](#createpost)
 - [deletePost](#deletepost)
 - [likePost](#likepost)
+- [publishDraft](#publishdraft)
 - [unlikePost](#unlikepost)
 - [updatePost](#updatepost)
 
@@ -409,7 +410,7 @@ Do not instantiate this class directly. Projects can only be obtained from the A
 
 ##### Defined in
 
-[index.ts:232](https://github.com/ApexDevelopment/cohost-api/blob/f4cad2e/index.ts#L232)
+[index.ts:232](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L232)
 
 ___
 
@@ -419,7 +420,7 @@ ___
 
 ##### Defined in
 
-[index.ts:225](https://github.com/ApexDevelopment/cohost-api/blob/f4cad2e/index.ts#L225)
+[index.ts:225](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L225)
 
 ___
 
@@ -429,7 +430,7 @@ ___
 
 ##### Defined in
 
-[index.ts:223](https://github.com/ApexDevelopment/cohost-api/blob/f4cad2e/index.ts#L223)
+[index.ts:223](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L223)
 
 ___
 
@@ -439,7 +440,7 @@ ___
 
 ##### Defined in
 
-[index.ts:224](https://github.com/ApexDevelopment/cohost-api/blob/f4cad2e/index.ts#L224)
+[index.ts:224](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L224)
 
 ___
 
@@ -449,7 +450,7 @@ ___
 
 ##### Defined in
 
-[index.ts:222](https://github.com/ApexDevelopment/cohost-api/blob/f4cad2e/index.ts#L222)
+[index.ts:222](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L222)
 
 ___
 
@@ -459,7 +460,7 @@ ___
 
 ##### Defined in
 
-[index.ts:231](https://github.com/ApexDevelopment/cohost-api/blob/f4cad2e/index.ts#L231)
+[index.ts:231](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L231)
 
 ___
 
@@ -469,7 +470,7 @@ ___
 
 ##### Defined in
 
-[index.ts:221](https://github.com/ApexDevelopment/cohost-api/blob/f4cad2e/index.ts#L221)
+[index.ts:221](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L221)
 
 ___
 
@@ -479,7 +480,7 @@ ___
 
 ##### Defined in
 
-[index.ts:227](https://github.com/ApexDevelopment/cohost-api/blob/f4cad2e/index.ts#L227)
+[index.ts:227](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L227)
 
 ___
 
@@ -489,7 +490,7 @@ ___
 
 ##### Defined in
 
-[index.ts:226](https://github.com/ApexDevelopment/cohost-api/blob/f4cad2e/index.ts#L226)
+[index.ts:226](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L226)
 
 ___
 
@@ -499,7 +500,7 @@ ___
 
 ##### Defined in
 
-[index.ts:220](https://github.com/ApexDevelopment/cohost-api/blob/f4cad2e/index.ts#L220)
+[index.ts:220](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L220)
 
 ___
 
@@ -509,7 +510,7 @@ ___
 
 ##### Defined in
 
-[index.ts:228](https://github.com/ApexDevelopment/cohost-api/blob/f4cad2e/index.ts#L228)
+[index.ts:228](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L228)
 
 ___
 
@@ -519,7 +520,7 @@ ___
 
 ##### Defined in
 
-[index.ts:230](https://github.com/ApexDevelopment/cohost-api/blob/f4cad2e/index.ts#L230)
+[index.ts:230](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L230)
 
 ___
 
@@ -529,7 +530,7 @@ ___
 
 ##### Defined in
 
-[index.ts:229](https://github.com/ApexDevelopment/cohost-api/blob/f4cad2e/index.ts#L229)
+[index.ts:229](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L229)
 
 ### Methods
 
@@ -553,7 +554,7 @@ The post with its postId set.
 
 ##### Defined in
 
-[index.ts:300](https://github.com/ApexDevelopment/cohost-api/blob/f4cad2e/index.ts#L300)
+[index.ts:300](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L300)
 
 ___
 
@@ -577,7 +578,7 @@ The post with its postId set.
 
 ##### Defined in
 
-[index.ts:288](https://github.com/ApexDevelopment/cohost-api/blob/f4cad2e/index.ts#L288)
+[index.ts:288](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L288)
 
 ___
 
@@ -599,7 +600,7 @@ Deletes a post from the project.
 
 ##### Defined in
 
-[index.ts:311](https://github.com/ApexDevelopment/cohost-api/blob/f4cad2e/index.ts#L311)
+[index.ts:311](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L311)
 
 ___
 
@@ -621,7 +622,31 @@ Gives a like from this project to a post.
 
 ##### Defined in
 
-[index.ts:340](https://github.com/ApexDevelopment/cohost-api/blob/f4cad2e/index.ts#L340)
+[index.ts:356](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L356)
+
+___
+
+#### publishDraft
+
+▸ **publishDraft**(`draftPost`): `Promise`\<`void`\>
+
+Publishes a post from the project's drafts.
+
+In the future, this function will also accept a number as the first argument, which will be the ID of the draft post to publish.
+
+##### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `draftPost` | [`Post`](#classespostmd) | The draft post to publish. |
+
+##### Returns
+
+`Promise`\<`void`\>
+
+##### Defined in
+
+[index.ts:342](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L342)
 
 ___
 
@@ -643,13 +668,13 @@ Removes a like from this project to a post.
 
 ##### Defined in
 
-[index.ts:352](https://github.com/ApexDevelopment/cohost-api/blob/f4cad2e/index.ts#L352)
+[index.ts:368](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L368)
 
 ___
 
 #### updatePost
 
-▸ **updatePost**(`postToUpdate`, `newPost`): `Promise`\<`any`\>
+▸ **updatePost**(`postToUpdate`, `newPost`): `Promise`\<`void`\>
 
 Updates a post in the project.
 
@@ -662,11 +687,11 @@ Updates a post in the project.
 
 ##### Returns
 
-`Promise`\<`any`\>
+`Promise`\<`void`\>
 
 ##### Defined in
 
-[index.ts:324](https://github.com/ApexDevelopment/cohost-api/blob/f4cad2e/index.ts#L324)
+[index.ts:324](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L324)
 
 
 <a name="classesusermd"></a>
@@ -697,7 +722,7 @@ The email address of this user.
 
 ##### Defined in
 
-[index.ts:374](https://github.com/ApexDevelopment/cohost-api/blob/f4cad2e/index.ts#L374)
+[index.ts:390](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L390)
 
 ___
 
@@ -709,7 +734,7 @@ The unique ID of this user.
 
 ##### Defined in
 
-[index.ts:372](https://github.com/ApexDevelopment/cohost-api/blob/f4cad2e/index.ts#L372)
+[index.ts:388](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L388)
 
 ___
 
@@ -721,7 +746,7 @@ The projects that this user is able to edit.
 
 ##### Defined in
 
-[index.ts:370](https://github.com/ApexDevelopment/cohost-api/blob/f4cad2e/index.ts#L370)
+[index.ts:386](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L386)
 
 # Enums
 
@@ -749,7 +774,7 @@ Whether a post is a draft or published.
 
 ##### Defined in
 
-[index.ts:12](https://github.com/ApexDevelopment/cohost-api/blob/f4cad2e/index.ts#L12)
+[index.ts:12](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L12)
 
 ___
 
@@ -759,4 +784,4 @@ ___
 
 ##### Defined in
 
-[index.ts:13](https://github.com/ApexDevelopment/cohost-api/blob/f4cad2e/index.ts#L13)
+[index.ts:13](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L13)
