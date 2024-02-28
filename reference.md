@@ -69,7 +69,7 @@ Creates a new Cohost API client. Requires no arguments.
 
 ##### Defined in
 
-[index.ts:417](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L417)
+[index.ts:497](https://github.com/ApexDevelopment/cohost-api/blob/d92db11/index.ts#L497)
 
 ### Properties
 
@@ -81,7 +81,7 @@ Whether the client is logged in.
 
 ##### Defined in
 
-[index.ts:409](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L409)
+[index.ts:489](https://github.com/ApexDevelopment/cohost-api/blob/d92db11/index.ts#L489)
 
 ___
 
@@ -93,7 +93,7 @@ The session token for the client.
 
 ##### Defined in
 
-[index.ts:407](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L407)
+[index.ts:487](https://github.com/ApexDevelopment/cohost-api/blob/d92db11/index.ts#L487)
 
 ___
 
@@ -105,7 +105,7 @@ The currently logged in user. Once logged in, can be used to access the user's i
 
 ##### Defined in
 
-[index.ts:412](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L412)
+[index.ts:492](https://github.com/ApexDevelopment/cohost-api/blob/d92db11/index.ts#L492)
 
 ### Methods
 
@@ -130,7 +130,7 @@ The logged in User, or null if the login failed.
 
 ##### Defined in
 
-[index.ts:439](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L439)
+[index.ts:533](https://github.com/ApexDevelopment/cohost-api/blob/d92db11/index.ts#L533)
 
 
 <a name="classespostmd"></a>
@@ -172,7 +172,7 @@ This class is not used for creating posts. Instead, use the PostBuilder class to
 
 ##### Defined in
 
-[index.ts:26](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L26)
+[index.ts:26](https://github.com/ApexDevelopment/cohost-api/blob/d92db11/index.ts#L26)
 
 ___
 
@@ -182,7 +182,7 @@ ___
 
 ##### Defined in
 
-[index.ts:25](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L25)
+[index.ts:25](https://github.com/ApexDevelopment/cohost-api/blob/d92db11/index.ts#L25)
 
 ___
 
@@ -192,7 +192,7 @@ ___
 
 ##### Defined in
 
-[index.ts:24](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L24)
+[index.ts:24](https://github.com/ApexDevelopment/cohost-api/blob/d92db11/index.ts#L24)
 
 
 <a name="classespostbuildermd"></a>
@@ -246,7 +246,7 @@ Creates a new PostBuilder, used for easily constructing a Post object.
 
 ##### Defined in
 
-[index.ts:148](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L148)
+[index.ts:148](https://github.com/ApexDevelopment/cohost-api/blob/d92db11/index.ts#L148)
 
 ### Methods
 
@@ -271,7 +271,7 @@ The PostBuilder object, for chaining.
 
 ##### Defined in
 
-[index.ts:159](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L159)
+[index.ts:159](https://github.com/ApexDevelopment/cohost-api/blob/d92db11/index.ts#L159)
 
 ___
 
@@ -295,7 +295,7 @@ The PostBuilder object, for chaining.
 
 ##### Defined in
 
-[index.ts:181](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L181)
+[index.ts:181](https://github.com/ApexDevelopment/cohost-api/blob/d92db11/index.ts#L181)
 
 ___
 
@@ -319,7 +319,7 @@ The PostBuilder object, for chaining.
 
 ##### Defined in
 
-[index.ts:171](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L171)
+[index.ts:171](https://github.com/ApexDevelopment/cohost-api/blob/d92db11/index.ts#L171)
 
 ___
 
@@ -343,7 +343,7 @@ The PostBuilder object, for chaining.
 
 ##### Defined in
 
-[index.ts:191](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L191)
+[index.ts:191](https://github.com/ApexDevelopment/cohost-api/blob/d92db11/index.ts#L191)
 
 ___
 
@@ -361,7 +361,7 @@ The Post object.
 
 ##### Defined in
 
-[index.ts:200](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L200)
+[index.ts:200](https://github.com/ApexDevelopment/cohost-api/blob/d92db11/index.ts#L200)
 
 
 <a name="classesprojectmd"></a>
@@ -397,6 +397,7 @@ Do not instantiate this class directly. Projects can only be obtained from the A
 - [createDraft](#createdraft)
 - [createPost](#createpost)
 - [deletePost](#deletepost)
+- [getPosts](#getposts)
 - [likePost](#likepost)
 - [publishDraft](#publishdraft)
 - [unlikePost](#unlikepost)
@@ -410,7 +411,7 @@ Do not instantiate this class directly. Projects can only be obtained from the A
 
 ##### Defined in
 
-[index.ts:232](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L232)
+[index.ts:232](https://github.com/ApexDevelopment/cohost-api/blob/d92db11/index.ts#L232)
 
 ___
 
@@ -420,7 +421,7 @@ ___
 
 ##### Defined in
 
-[index.ts:225](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L225)
+[index.ts:225](https://github.com/ApexDevelopment/cohost-api/blob/d92db11/index.ts#L225)
 
 ___
 
@@ -430,7 +431,7 @@ ___
 
 ##### Defined in
 
-[index.ts:223](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L223)
+[index.ts:223](https://github.com/ApexDevelopment/cohost-api/blob/d92db11/index.ts#L223)
 
 ___
 
@@ -440,7 +441,7 @@ ___
 
 ##### Defined in
 
-[index.ts:224](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L224)
+[index.ts:224](https://github.com/ApexDevelopment/cohost-api/blob/d92db11/index.ts#L224)
 
 ___
 
@@ -450,7 +451,7 @@ ___
 
 ##### Defined in
 
-[index.ts:222](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L222)
+[index.ts:222](https://github.com/ApexDevelopment/cohost-api/blob/d92db11/index.ts#L222)
 
 ___
 
@@ -460,7 +461,7 @@ ___
 
 ##### Defined in
 
-[index.ts:231](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L231)
+[index.ts:231](https://github.com/ApexDevelopment/cohost-api/blob/d92db11/index.ts#L231)
 
 ___
 
@@ -470,7 +471,7 @@ ___
 
 ##### Defined in
 
-[index.ts:221](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L221)
+[index.ts:221](https://github.com/ApexDevelopment/cohost-api/blob/d92db11/index.ts#L221)
 
 ___
 
@@ -480,7 +481,7 @@ ___
 
 ##### Defined in
 
-[index.ts:227](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L227)
+[index.ts:227](https://github.com/ApexDevelopment/cohost-api/blob/d92db11/index.ts#L227)
 
 ___
 
@@ -490,7 +491,7 @@ ___
 
 ##### Defined in
 
-[index.ts:226](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L226)
+[index.ts:226](https://github.com/ApexDevelopment/cohost-api/blob/d92db11/index.ts#L226)
 
 ___
 
@@ -500,7 +501,7 @@ ___
 
 ##### Defined in
 
-[index.ts:220](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L220)
+[index.ts:220](https://github.com/ApexDevelopment/cohost-api/blob/d92db11/index.ts#L220)
 
 ___
 
@@ -510,7 +511,7 @@ ___
 
 ##### Defined in
 
-[index.ts:228](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L228)
+[index.ts:228](https://github.com/ApexDevelopment/cohost-api/blob/d92db11/index.ts#L228)
 
 ___
 
@@ -520,7 +521,7 @@ ___
 
 ##### Defined in
 
-[index.ts:230](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L230)
+[index.ts:230](https://github.com/ApexDevelopment/cohost-api/blob/d92db11/index.ts#L230)
 
 ___
 
@@ -530,7 +531,7 @@ ___
 
 ##### Defined in
 
-[index.ts:229](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L229)
+[index.ts:229](https://github.com/ApexDevelopment/cohost-api/blob/d92db11/index.ts#L229)
 
 ### Methods
 
@@ -554,7 +555,7 @@ The post with its postId set.
 
 ##### Defined in
 
-[index.ts:300](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L300)
+[index.ts:304](https://github.com/ApexDevelopment/cohost-api/blob/d92db11/index.ts#L304)
 
 ___
 
@@ -578,7 +579,7 @@ The post with its postId set.
 
 ##### Defined in
 
-[index.ts:288](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L288)
+[index.ts:288](https://github.com/ApexDevelopment/cohost-api/blob/d92db11/index.ts#L288)
 
 ___
 
@@ -600,7 +601,36 @@ Deletes a post from the project.
 
 ##### Defined in
 
-[index.ts:311](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L311)
+[index.ts:319](https://github.com/ApexDevelopment/cohost-api/blob/d92db11/index.ts#L319)
+
+___
+
+#### getPosts
+
+▸ **getPosts**(`page?`, `options?`): `Promise`\<`any`\>
+
+Gets a page of posts from the project. The Cohost API returns 20 posts per page.
+
+##### Parameters
+
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `page` | `number` | `0` | The page of posts to get. Defaults to 0. |
+| `options` | `Object` | `undefined` | Options for filtering the returned posts. |
+| `options.hideAsks` | `boolean` | `undefined` | - |
+| `options.hideReplies` | `boolean` | `undefined` | - |
+| `options.hideShares` | `boolean` | `undefined` | - |
+| `options.pinnedPostsAtTop` | `boolean` | `undefined` | - |
+
+##### Returns
+
+`Promise`\<`any`\>
+
+An array of TimelinePosts from the project.
+
+##### Defined in
+
+[index.ts:410](https://github.com/ApexDevelopment/cohost-api/blob/d92db11/index.ts#L410)
 
 ___
 
@@ -622,7 +652,7 @@ Gives a like from this project to a post.
 
 ##### Defined in
 
-[index.ts:356](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L356)
+[index.ts:376](https://github.com/ApexDevelopment/cohost-api/blob/d92db11/index.ts#L376)
 
 ___
 
@@ -646,7 +676,7 @@ In the future, this function will also accept a number as the first argument, wh
 
 ##### Defined in
 
-[index.ts:342](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L342)
+[index.ts:358](https://github.com/ApexDevelopment/cohost-api/blob/d92db11/index.ts#L358)
 
 ___
 
@@ -668,7 +698,7 @@ Removes a like from this project to a post.
 
 ##### Defined in
 
-[index.ts:368](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L368)
+[index.ts:392](https://github.com/ApexDevelopment/cohost-api/blob/d92db11/index.ts#L392)
 
 ___
 
@@ -691,7 +721,7 @@ Updates a post in the project.
 
 ##### Defined in
 
-[index.ts:324](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L324)
+[index.ts:336](https://github.com/ApexDevelopment/cohost-api/blob/d92db11/index.ts#L336)
 
 
 <a name="classesusermd"></a>
@@ -722,7 +752,7 @@ The email address of this user.
 
 ##### Defined in
 
-[index.ts:390](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L390)
+[index.ts:470](https://github.com/ApexDevelopment/cohost-api/blob/d92db11/index.ts#L470)
 
 ___
 
@@ -734,7 +764,7 @@ The unique ID of this user.
 
 ##### Defined in
 
-[index.ts:388](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L388)
+[index.ts:468](https://github.com/ApexDevelopment/cohost-api/blob/d92db11/index.ts#L468)
 
 ___
 
@@ -746,7 +776,7 @@ The projects that this user is able to edit.
 
 ##### Defined in
 
-[index.ts:386](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L386)
+[index.ts:466](https://github.com/ApexDevelopment/cohost-api/blob/d92db11/index.ts#L466)
 
 # Enums
 
@@ -774,7 +804,7 @@ Whether a post is a draft or published.
 
 ##### Defined in
 
-[index.ts:12](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L12)
+[index.ts:12](https://github.com/ApexDevelopment/cohost-api/blob/d92db11/index.ts#L12)
 
 ___
 
@@ -784,4 +814,4 @@ ___
 
 ##### Defined in
 
-[index.ts:13](https://github.com/ApexDevelopment/cohost-api/blob/6507399/index.ts#L13)
+[index.ts:13](https://github.com/ApexDevelopment/cohost-api/blob/d92db11/index.ts#L13)
