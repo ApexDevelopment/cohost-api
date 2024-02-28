@@ -419,6 +419,20 @@ class Client {
       links: [
         httpBatchLink({
           url: COHOST_TRPC_URL,
+          fetch: async (input, init) => {
+            let res = await fetch(input, init);
+
+            if (res.headers.get("set-cookie")) {
+              const cookie =
+                res.headers.get("set-cookie")?.split(";")[0] || null;
+
+              if (cookie?.startsWith("connect.sid=")) {
+                this.token = cookie;
+              }
+            }
+
+            return res;
+          },
           headers: () => {
             if (!this.token) return {};
             return {
@@ -448,21 +462,13 @@ class Client {
 
     const clientHash = Buffer.from(hash).toString("base64");
 
-    let req = await fetch(COHOST_API_URL + "/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email, clientHash }),
+    let loginResponse = await this.trpc.login.login.mutate({
+      email,
+      clientHash,
     });
 
-    let resJSON = await req.text();
-    let res = JSON.parse(resJSON);
-
-    this.token = req?.headers?.get("set-cookie")?.split(";")[0] || null;
-
-    if (res?.userId) {
-      this.user = new User(this.trpc, res.userId, email);
+    if (loginResponse.userId) {
+      this.user = new User(this.trpc, loginResponse.userId, email);
 
       let projects = (await this.trpc.projects.listEditedProjects.query())
         .projects;
