@@ -389,7 +389,7 @@ class Client {
   private trpc: any;
   /* The session token for the client. */
   private token: string | null = null;
-  /* Whether the client is logged in.. */
+  /* Whether the client is logged in. */
   loggedIn = false;
 
   /* The currently logged in user. Once logged in, can be used to access the user's information and projects. */
