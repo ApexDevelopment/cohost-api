@@ -1,6 +1,6 @@
 {
   "name": "cohost-api",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "An unofficial tRPC-based wrapper API for Cohost.org",
   "main": "index.js",
   "scripts": {
@@ -14,6 +14,7 @@
   "keywords": [
     "api"
   ],
+  "type": "module",
   "author": "Apex",
   "license": "ISC",
   "bugs": {
@@ -31,6 +32,8 @@
   },
   "dependencies": {
     "@trpc/client": "^11.0.0-next-beta.294",
+    "image-size": "^1.1.1",
+    "mime": "^4.0.1",
     "zod": "^3.22.4"
   }
 }

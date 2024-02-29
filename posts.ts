@@ -1,7 +1,44 @@
-import { router, t } from "./trpc";
+import { router, t } from "./trpc.js";
 import { z } from "zod";
 
+const attachment = router({
+  start: t.procedure
+    .input(
+      z.object({
+        projectHandle: z.string(),
+        postId: z.number(),
+        filename: z.string(),
+        contentType: z.string(),
+        contentLength: z.number(),
+        width: z.number(),
+        height: z.number(),
+      }),
+    )
+    .mutation(() => {
+      return {
+        attachmentId: "",
+        url: "",
+        requiredFields: {},
+      };
+    }),
+  finish: t.procedure
+    .input(
+      z.object({
+        projectHandle: z.string(),
+        postId: z.number(),
+        attachmentId: z.string(),
+      }),
+    )
+    .mutation(() => {
+      return {
+        attachmentId: "",
+        url: "",
+      };
+    }),
+});
+
 const posts = router({
+  attachment,
   isLiked: t.procedure.query(() => {}),
   profilePosts: t.procedure
     .input(

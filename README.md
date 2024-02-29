@@ -19,10 +19,15 @@ async function demo() {
 
   // Create new post
   let post = new PostBuilder();
-  post.addMarkdownBlock("hello from cohost-api!");
+    .addMarkdownBlock("hello from cohost-api!")
+    .build();
 
   // Send to Cohost
-  user?.projects[0].createDraft(post.build()); // or use .createPost() to publish it immediately
+  user?.projects[0].createDraft(); // or use .createPost() to publish it immediately
+
+  // Attach a file
+  // This must be done after the post is created/drafted due to how the Cohost API works
+  user?.projects[0].addAttachment(post, "file.png");
 }
 
 demo(); // Check your Cohost page!
@@ -38,6 +43,7 @@ The API reference can be found in [this document](reference.md).
 
 - Getting your projects' profile information
 - Creating posts & post drafts
+- Uploading attachments
 - Editing existing posts & post drafts
 - Liking and unliking posts
 - Getting a list of a project's posts

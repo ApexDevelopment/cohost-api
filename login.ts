@@ -1,4 +1,4 @@
-import { router, t } from "./trpc";
+import { router, t } from "./trpc.js";
 import { z } from "zod";
 
 const login = router({

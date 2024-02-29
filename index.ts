@@ -1,6 +1,10 @@
 import { createTRPCClient, httpBatchLink } from "@trpc/client";
-import type { AppRouter } from "./app";
+import mime from "mime";
+import type { AppRouter } from "./app.js";
+import imageSize = require("image-size");
 import crypto = require("crypto");
+import fs = require("fs");
+import path = require("path");
 
 const COHOST_API_URL = "https://cohost.org/api/v1";
 const COHOST_TRPC_URL = "https://cohost.org/api/v1/trpc";
@@ -367,6 +371,123 @@ class Project {
       cws: draftPost.content.cws,
       tags: draftPost.content.tags,
     });
+  }
+
+  /**
+   * Adds an attachment to a post. This must be done after the post is created. This is a limitation of the Cohost API.
+   * @param post The post to add the attachment to.
+   * @param filepath The path to the file to upload.
+   * @returns The ID of the attachment.
+   */
+  async addAttachment(post: Post, filepath: string): Promise<number>;
+  /**
+   * Adds an attachment to a post. This must be done after the post is created. This is a limitation of the Cohost API.
+   * @param post The post to add the attachment to.
+   * @param filename The name of the file to upload.
+   * @param mimeType The MIME type of the file.
+   * @param attachment A Buffer containing the file to upload.
+   * @param width The width of the image.
+   * @param height The height of the image.
+   * @returns The ID of the attachment.
+   */
+  async addAttachment(
+    post: Post,
+    filename: string,
+    mimeType: string,
+    attachment: Buffer,
+    width: number,
+    height: number,
+  ): Promise<number>;
+  async addAttachment(
+    post: Post,
+    filepathOrName: string,
+    mimeType?: string,
+    attachment?: Buffer,
+    width?: number,
+    height?: number,
+  ): Promise<number> {
+    if (!this.trpc) {
+      throw new Error("User does not have ownership of this project.");
+    }
+
+    if (!post.postId) {
+      throw new Error(
+        "Post must first be published or drafted before an attachment can be added.",
+      );
+    }
+
+    if (!mimeType || !attachment || !width || !height) {
+      attachment = fs.readFileSync(filepathOrName);
+      let type = mimeType || mime.getType(filepathOrName);
+
+      if (!type) {
+        throw new Error("Could not determine MIME type of file.");
+      }
+
+      mimeType = type;
+      filepathOrName = path.basename(filepathOrName);
+
+      let dimensions = imageSize.imageSize(attachment);
+      width = dimensions.width;
+      height = dimensions.height;
+    }
+
+    let response = await this.trpc.posts.attachment.start.mutate({
+      projectHandle: this.handle,
+      postId: post.postId,
+      filename: filepathOrName,
+      contentType: mimeType,
+      contentLength: attachment.length,
+      width,
+      height,
+    });
+
+    // Upload to S3 bucket
+    const formData = new FormData();
+
+    for (let key in response.requiredFields) {
+      formData.append(key, response.requiredFields[key]);
+    }
+
+    formData.append("file", new Blob([attachment]), filepathOrName);
+
+    await fetch(response.url, {
+      method: "POST",
+      body: formData,
+    });
+
+    let finishResponse = await this.trpc.posts.attachment.finish.mutate({
+      projectHandle: this.handle,
+      postId: post.postId,
+      attachmentId: response.attachmentId,
+    });
+
+    await this.trpc.posts.update.mutate({
+      projectHandle: this.handle,
+      postId: post.postId,
+      content: {
+        ...post.content,
+        blocks: [
+          ...post.content.blocks,
+          {
+            type: "attachment",
+            attachment: {
+              attachmentId: finishResponse.attachmentId,
+              altText: "",
+              previewURL: finishResponse.url,
+              fileURL: finishResponse.url,
+              kind: "image",
+              width,
+              height,
+            },
+          },
+        ],
+      },
+      cws: post.content.cws,
+      tags: post.content.tags,
+    });
+
+    return response.attachmentId;
   }
 
   /**

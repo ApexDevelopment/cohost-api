@@ -1,8 +1,8 @@
-import { router } from "./trpc";
-import { loginRouter } from "./login";
-import { postsRouter } from "./posts";
-import { projectsRouter } from "./projects";
-import { relationshipsRouter } from "./relationships";
+import { router } from "./trpc.js";
+import { loginRouter } from "./login.js";
+import { postsRouter } from "./posts.js";
+import { projectsRouter } from "./projects.js";
+import { relationshipsRouter } from "./relationships.js";
 
 const appRouter = router({
   login: loginRouter,
