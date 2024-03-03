@@ -69,7 +69,7 @@ Creates a new Cohost API client. Requires no arguments.
 
 ##### Defined in
 
-[objects/client.ts:28](https://github.com/ApexDevelopment/cohost-api/blob/bacdf5d/objects/client.ts#L28)
+[objects/client.ts:28](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/client.ts#L28)
 
 ### Properties
 
@@ -81,7 +81,7 @@ Whether the client is logged in.
 
 ##### Defined in
 
-[objects/client.ts:20](https://github.com/ApexDevelopment/cohost-api/blob/bacdf5d/objects/client.ts#L20)
+[objects/client.ts:20](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/client.ts#L20)
 
 ___
 
@@ -93,7 +93,7 @@ The session token for the client.
 
 ##### Defined in
 
-[objects/client.ts:18](https://github.com/ApexDevelopment/cohost-api/blob/bacdf5d/objects/client.ts#L18)
+[objects/client.ts:18](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/client.ts#L18)
 
 ___
 
@@ -105,7 +105,7 @@ The currently logged in user. Once logged in, can be used to access the user's i
 
 ##### Defined in
 
-[objects/client.ts:23](https://github.com/ApexDevelopment/cohost-api/blob/bacdf5d/objects/client.ts#L23)
+[objects/client.ts:23](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/client.ts#L23)
 
 ### Methods
 
@@ -130,7 +130,7 @@ The logged in User, or null if the login failed.
 
 ##### Defined in
 
-[objects/client.ts:64](https://github.com/ApexDevelopment/cohost-api/blob/bacdf5d/objects/client.ts#L64)
+[objects/client.ts:64](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/client.ts#L64)
 
 
 <a name="classespostmd"></a>
@@ -172,7 +172,7 @@ This class is not used for creating posts. Instead, use the PostBuilder class to
 
 ##### Defined in
 
-[objects/post.ts:21](https://github.com/ApexDevelopment/cohost-api/blob/bacdf5d/objects/post.ts#L21)
+[objects/post.ts:21](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/post.ts#L21)
 
 ___
 
@@ -182,7 +182,7 @@ ___
 
 ##### Defined in
 
-[objects/post.ts:20](https://github.com/ApexDevelopment/cohost-api/blob/bacdf5d/objects/post.ts#L20)
+[objects/post.ts:20](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/post.ts#L20)
 
 ___
 
@@ -192,7 +192,7 @@ ___
 
 ##### Defined in
 
-[objects/post.ts:19](https://github.com/ApexDevelopment/cohost-api/blob/bacdf5d/objects/post.ts#L19)
+[objects/post.ts:19](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/post.ts#L19)
 
 
 <a name="classespostbuildermd"></a>
@@ -246,7 +246,7 @@ Creates a new PostBuilder, used for easily constructing a Post object.
 
 ##### Defined in
 
-[objects/post.ts:143](https://github.com/ApexDevelopment/cohost-api/blob/bacdf5d/objects/post.ts#L143)
+[objects/post.ts:143](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/post.ts#L143)
 
 ### Methods
 
@@ -271,7 +271,7 @@ The PostBuilder object, for chaining.
 
 ##### Defined in
 
-[objects/post.ts:154](https://github.com/ApexDevelopment/cohost-api/blob/bacdf5d/objects/post.ts#L154)
+[objects/post.ts:154](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/post.ts#L154)
 
 ___
 
@@ -295,7 +295,7 @@ The PostBuilder object, for chaining.
 
 ##### Defined in
 
-[objects/post.ts:176](https://github.com/ApexDevelopment/cohost-api/blob/bacdf5d/objects/post.ts#L176)
+[objects/post.ts:176](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/post.ts#L176)
 
 ___
 
@@ -319,7 +319,7 @@ The PostBuilder object, for chaining.
 
 ##### Defined in
 
-[objects/post.ts:166](https://github.com/ApexDevelopment/cohost-api/blob/bacdf5d/objects/post.ts#L166)
+[objects/post.ts:166](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/post.ts#L166)
 
 ___
 
@@ -343,7 +343,7 @@ The PostBuilder object, for chaining.
 
 ##### Defined in
 
-[objects/post.ts:186](https://github.com/ApexDevelopment/cohost-api/blob/bacdf5d/objects/post.ts#L186)
+[objects/post.ts:186](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/post.ts#L186)
 
 ___
 
@@ -361,7 +361,7 @@ The Post object.
 
 ##### Defined in
 
-[objects/post.ts:195](https://github.com/ApexDevelopment/cohost-api/blob/bacdf5d/objects/post.ts#L195)
+[objects/post.ts:195](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/post.ts#L195)
 
 
 <a name="classesprojectmd"></a>
@@ -412,7 +412,7 @@ Do not instantiate this class directly. Projects can only be obtained from the A
 
 ##### Defined in
 
-[objects/project.ts:28](https://github.com/ApexDevelopment/cohost-api/blob/bacdf5d/objects/project.ts#L28)
+[objects/project.ts:28](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L28)
 
 ___
 
@@ -422,7 +422,7 @@ ___
 
 ##### Defined in
 
-[objects/project.ts:21](https://github.com/ApexDevelopment/cohost-api/blob/bacdf5d/objects/project.ts#L21)
+[objects/project.ts:21](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L21)
 
 ___
 
@@ -432,7 +432,7 @@ ___
 
 ##### Defined in
 
-[objects/project.ts:19](https://github.com/ApexDevelopment/cohost-api/blob/bacdf5d/objects/project.ts#L19)
+[objects/project.ts:19](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L19)
 
 ___
 
@@ -442,7 +442,7 @@ ___
 
 ##### Defined in
 
-[objects/project.ts:20](https://github.com/ApexDevelopment/cohost-api/blob/bacdf5d/objects/project.ts#L20)
+[objects/project.ts:20](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L20)
 
 ___
 
@@ -452,7 +452,7 @@ ___
 
 ##### Defined in
 
-[objects/project.ts:18](https://github.com/ApexDevelopment/cohost-api/blob/bacdf5d/objects/project.ts#L18)
+[objects/project.ts:18](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L18)
 
 ___
 
@@ -462,7 +462,7 @@ ___
 
 ##### Defined in
 
-[objects/project.ts:27](https://github.com/ApexDevelopment/cohost-api/blob/bacdf5d/objects/project.ts#L27)
+[objects/project.ts:27](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L27)
 
 ___
 
@@ -472,7 +472,7 @@ ___
 
 ##### Defined in
 
-[objects/project.ts:17](https://github.com/ApexDevelopment/cohost-api/blob/bacdf5d/objects/project.ts#L17)
+[objects/project.ts:17](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L17)
 
 ___
 
@@ -482,7 +482,7 @@ ___
 
 ##### Defined in
 
-[objects/project.ts:23](https://github.com/ApexDevelopment/cohost-api/blob/bacdf5d/objects/project.ts#L23)
+[objects/project.ts:23](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L23)
 
 ___
 
@@ -492,7 +492,7 @@ ___
 
 ##### Defined in
 
-[objects/project.ts:22](https://github.com/ApexDevelopment/cohost-api/blob/bacdf5d/objects/project.ts#L22)
+[objects/project.ts:22](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L22)
 
 ___
 
@@ -502,7 +502,7 @@ ___
 
 ##### Defined in
 
-[objects/project.ts:16](https://github.com/ApexDevelopment/cohost-api/blob/bacdf5d/objects/project.ts#L16)
+[objects/project.ts:16](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L16)
 
 ___
 
@@ -512,7 +512,7 @@ ___
 
 ##### Defined in
 
-[objects/project.ts:24](https://github.com/ApexDevelopment/cohost-api/blob/bacdf5d/objects/project.ts#L24)
+[objects/project.ts:24](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L24)
 
 ___
 
@@ -522,7 +522,7 @@ ___
 
 ##### Defined in
 
-[objects/project.ts:26](https://github.com/ApexDevelopment/cohost-api/blob/bacdf5d/objects/project.ts#L26)
+[objects/project.ts:26](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L26)
 
 ___
 
@@ -532,7 +532,7 @@ ___
 
 ##### Defined in
 
-[objects/project.ts:25](https://github.com/ApexDevelopment/cohost-api/blob/bacdf5d/objects/project.ts#L25)
+[objects/project.ts:25](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L25)
 
 ### Methods
 
@@ -557,7 +557,7 @@ The ID of the attachment.
 
 ##### Defined in
 
-[objects/project.ts:174](https://github.com/ApexDevelopment/cohost-api/blob/bacdf5d/objects/project.ts#L174)
+[objects/project.ts:174](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L174)
 
 ▸ **addAttachment**(`post`, `filename`, `mimeType`, `attachment`, `width`, `height`): `Promise`\<`number`\>
 
@@ -582,7 +582,7 @@ The ID of the attachment.
 
 ##### Defined in
 
-[objects/project.ts:185](https://github.com/ApexDevelopment/cohost-api/blob/bacdf5d/objects/project.ts#L185)
+[objects/project.ts:185](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L185)
 
 ___
 
@@ -606,7 +606,7 @@ The post with its postId set.
 
 ##### Defined in
 
-[objects/project.ts:100](https://github.com/ApexDevelopment/cohost-api/blob/bacdf5d/objects/project.ts#L100)
+[objects/project.ts:100](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L100)
 
 ___
 
@@ -630,7 +630,7 @@ The post with its postId set.
 
 ##### Defined in
 
-[objects/project.ts:84](https://github.com/ApexDevelopment/cohost-api/blob/bacdf5d/objects/project.ts#L84)
+[objects/project.ts:84](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L84)
 
 ___
 
@@ -652,7 +652,7 @@ Deletes a post from the project.
 
 ##### Defined in
 
-[objects/project.ts:115](https://github.com/ApexDevelopment/cohost-api/blob/bacdf5d/objects/project.ts#L115)
+[objects/project.ts:115](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L115)
 
 ___
 
@@ -681,7 +681,7 @@ An array of TimelinePosts from the project.
 
 ##### Defined in
 
-[objects/project.ts:323](https://github.com/ApexDevelopment/cohost-api/blob/bacdf5d/objects/project.ts#L323)
+[objects/project.ts:323](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L323)
 
 ___
 
@@ -703,7 +703,7 @@ Gives a like from this project to a post.
 
 ##### Defined in
 
-[objects/project.ts:289](https://github.com/ApexDevelopment/cohost-api/blob/bacdf5d/objects/project.ts#L289)
+[objects/project.ts:289](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L289)
 
 ___
 
@@ -727,7 +727,7 @@ In the future, this function will also accept a number as the first argument, wh
 
 ##### Defined in
 
-[objects/project.ts:154](https://github.com/ApexDevelopment/cohost-api/blob/bacdf5d/objects/project.ts#L154)
+[objects/project.ts:154](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L154)
 
 ___
 
@@ -749,7 +749,7 @@ Removes a like from this project to a post.
 
 ##### Defined in
 
-[objects/project.ts:305](https://github.com/ApexDevelopment/cohost-api/blob/bacdf5d/objects/project.ts#L305)
+[objects/project.ts:305](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L305)
 
 ___
 
@@ -772,7 +772,7 @@ Updates a post in the project.
 
 ##### Defined in
 
-[objects/project.ts:132](https://github.com/ApexDevelopment/cohost-api/blob/bacdf5d/objects/project.ts#L132)
+[objects/project.ts:132](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L132)
 
 
 <a name="classesusermd"></a>
@@ -803,7 +803,7 @@ The email address of this user.
 
 ##### Defined in
 
-[objects/user.ts:16](https://github.com/ApexDevelopment/cohost-api/blob/bacdf5d/objects/user.ts#L16)
+[objects/user.ts:16](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/user.ts#L16)
 
 ___
 
@@ -815,7 +815,7 @@ The unique ID of this user.
 
 ##### Defined in
 
-[objects/user.ts:14](https://github.com/ApexDevelopment/cohost-api/blob/bacdf5d/objects/user.ts#L14)
+[objects/user.ts:14](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/user.ts#L14)
 
 ___
 
@@ -827,7 +827,7 @@ The projects that this user is able to edit.
 
 ##### Defined in
 
-[objects/user.ts:12](https://github.com/ApexDevelopment/cohost-api/blob/bacdf5d/objects/user.ts#L12)
+[objects/user.ts:12](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/user.ts#L12)
 
 # Enums
 
@@ -855,7 +855,7 @@ Whether a post is a draft or published.
 
 ##### Defined in
 
-[objects/post.ts:7](https://github.com/ApexDevelopment/cohost-api/blob/bacdf5d/objects/post.ts#L7)
+[objects/post.ts:7](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/post.ts#L7)
 
 ___
 
@@ -865,4 +865,4 @@ ___
 
 ##### Defined in
 
-[objects/post.ts:8](https://github.com/ApexDevelopment/cohost-api/blob/bacdf5d/objects/post.ts#L8)
+[objects/post.ts:8](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/post.ts#L8)
