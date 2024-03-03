@@ -1,3 +1,4 @@
+import { Post } from "../objects/post.js";
 import { router, t } from "./trpc.js";
 import { z } from "zod";
 
@@ -54,9 +55,9 @@ const posts = router({
         }),
       }),
     )
-    .query(() => {
+    .query((): { posts: Post[] } => {
       return {
-        posts: [{}],
+        posts: [],
       };
     }),
   create: t.procedure
