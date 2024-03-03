@@ -19,6 +19,20 @@ const projects = router({
           pronouns: "",
           flags: [],
           avatarShape: "",
+          loggedOutPostVisibility: "",
+          frequentlyUsedTags: [],
+          askSettings: {
+            enabled: false,
+            allowAnon: false,
+            requireLoggedInAnon: false,
+          },
+          contactCard: [
+            {
+              service: "",
+              value: "",
+              visibility: "",
+            },
+          ],
         },
       ],
     };
