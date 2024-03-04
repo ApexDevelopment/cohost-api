@@ -40,7 +40,9 @@ const attachment = router({
 
 const posts = router({
   attachment,
-  isLiked: t.procedure.query(() => {}),
+  isLiked: t.procedure.input(z.number()).query(() => {
+    return false;
+  }),
   profilePosts: t.procedure
     .input(
       z.object({

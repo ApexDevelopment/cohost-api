@@ -21,10 +21,14 @@
   - [Class: User](#class-user)
     - [Table of contents](#table-of-contents-4)
     - [Properties](#properties-3)
+    - [Methods](#methods-3)
 - [Enums](#enums)
   - [Enumeration: PostState](#enumeration-poststate)
     - [Table of contents](#table-of-contents-5)
     - [Enumeration Members](#enumeration-members)
+  - [Enumeration: Privacy](#enumeration-privacy)
+    - [Table of contents](#table-of-contents-6)
+    - [Enumeration Members](#enumeration-members-1)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -69,7 +73,7 @@ Creates a new Cohost API client. Requires no arguments.
 
 ##### Defined in
 
-[objects/client.ts:28](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/client.ts#L28)
+[objects/client.ts:28](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/client.ts#L28)
 
 ### Properties
 
@@ -81,7 +85,7 @@ Whether the client is logged in.
 
 ##### Defined in
 
-[objects/client.ts:20](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/client.ts#L20)
+[objects/client.ts:20](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/client.ts#L20)
 
 ___
 
@@ -93,7 +97,7 @@ The session token for the client.
 
 ##### Defined in
 
-[objects/client.ts:18](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/client.ts#L18)
+[objects/client.ts:18](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/client.ts#L18)
 
 ___
 
@@ -105,7 +109,7 @@ The currently logged in user. Once logged in, can be used to access the user's i
 
 ##### Defined in
 
-[objects/client.ts:23](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/client.ts#L23)
+[objects/client.ts:23](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/client.ts#L23)
 
 ### Methods
 
@@ -130,7 +134,7 @@ The logged in User, or null if the login failed.
 
 ##### Defined in
 
-[objects/client.ts:64](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/client.ts#L64)
+[objects/client.ts:64](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/client.ts#L64)
 
 
 <a name="classespostmd"></a>
@@ -172,7 +176,7 @@ This class is not used for creating posts. Instead, use the PostBuilder class to
 
 ##### Defined in
 
-[objects/post.ts:21](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/post.ts#L21)
+[objects/post.ts:21](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/post.ts#L21)
 
 ___
 
@@ -182,7 +186,7 @@ ___
 
 ##### Defined in
 
-[objects/post.ts:20](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/post.ts#L20)
+[objects/post.ts:20](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/post.ts#L20)
 
 ___
 
@@ -192,7 +196,7 @@ ___
 
 ##### Defined in
 
-[objects/post.ts:19](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/post.ts#L19)
+[objects/post.ts:19](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/post.ts#L19)
 
 
 <a name="classespostbuildermd"></a>
@@ -246,7 +250,7 @@ Creates a new PostBuilder, used for easily constructing a Post object.
 
 ##### Defined in
 
-[objects/post.ts:143](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/post.ts#L143)
+[objects/post.ts:143](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/post.ts#L143)
 
 ### Methods
 
@@ -271,7 +275,7 @@ The PostBuilder object, for chaining.
 
 ##### Defined in
 
-[objects/post.ts:154](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/post.ts#L154)
+[objects/post.ts:154](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/post.ts#L154)
 
 ___
 
@@ -295,7 +299,7 @@ The PostBuilder object, for chaining.
 
 ##### Defined in
 
-[objects/post.ts:176](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/post.ts#L176)
+[objects/post.ts:176](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/post.ts#L176)
 
 ___
 
@@ -319,7 +323,7 @@ The PostBuilder object, for chaining.
 
 ##### Defined in
 
-[objects/post.ts:166](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/post.ts#L166)
+[objects/post.ts:166](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/post.ts#L166)
 
 ___
 
@@ -343,7 +347,7 @@ The PostBuilder object, for chaining.
 
 ##### Defined in
 
-[objects/post.ts:186](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/post.ts#L186)
+[objects/post.ts:186](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/post.ts#L186)
 
 ___
 
@@ -361,7 +365,7 @@ The Post object.
 
 ##### Defined in
 
-[objects/post.ts:195](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/post.ts#L195)
+[objects/post.ts:195](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/post.ts#L195)
 
 
 <a name="classesprojectmd"></a>
@@ -378,16 +382,19 @@ Do not instantiate this class directly. Projects can only be obtained from the A
 
 #### Properties
 
+- [atomFeedURL](#atomfeedurl)
 - [avatarShape](#avatarshape)
 - [avatarURL](#avatarurl)
 - [dek](#dek)
 - [description](#description)
 - [displayName](#displayname)
 - [flags](#flags)
+- [frequentlyUsedTags](#frequentlyusedtags)
 - [handle](#handle)
 - [headerPreviewURL](#headerpreviewurl)
 - [headerURL](#headerurl)
 - [id](#id)
+- [loggedOutPostVisibility](#loggedoutpostvisibility)
 - [privacy](#privacy)
 - [pronouns](#pronouns)
 - [url](#url)
@@ -406,13 +413,23 @@ Do not instantiate this class directly. Projects can only be obtained from the A
 
 ### Properties
 
+#### atomFeedURL
+
+• **atomFeedURL**: `string`
+
+##### Defined in
+
+[objects/project.ts:41](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/project.ts#L41)
+
+___
+
 #### avatarShape
 
 • **avatarShape**: `string`
 
 ##### Defined in
 
-[objects/project.ts:28](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L28)
+[objects/project.ts:38](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/project.ts#L38)
 
 ___
 
@@ -422,7 +439,7 @@ ___
 
 ##### Defined in
 
-[objects/project.ts:21](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L21)
+[objects/project.ts:31](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/project.ts#L31)
 
 ___
 
@@ -430,9 +447,11 @@ ___
 
 • **dek**: `string`
 
+The project subheading.
+
 ##### Defined in
 
-[objects/project.ts:19](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L19)
+[objects/project.ts:28](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/project.ts#L28)
 
 ___
 
@@ -440,9 +459,11 @@ ___
 
 • **description**: `string`
 
+The description/bio of the project.
+
 ##### Defined in
 
-[objects/project.ts:20](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L20)
+[objects/project.ts:30](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/project.ts#L30)
 
 ___
 
@@ -450,9 +471,11 @@ ___
 
 • **displayName**: `string`
 
+The display name, which shows up on the timeline.
+
 ##### Defined in
 
-[objects/project.ts:18](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L18)
+[objects/project.ts:26](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/project.ts#L26)
 
 ___
 
@@ -462,7 +485,17 @@ ___
 
 ##### Defined in
 
-[objects/project.ts:27](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L27)
+[objects/project.ts:37](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/project.ts#L37)
+
+___
+
+#### frequentlyUsedTags
+
+• **frequentlyUsedTags**: `string`[]
+
+##### Defined in
+
+[objects/project.ts:40](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/project.ts#L40)
 
 ___
 
@@ -470,9 +503,11 @@ ___
 
 • **handle**: `string`
 
+The handle of the project, without the @.
+
 ##### Defined in
 
-[objects/project.ts:17](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L17)
+[objects/project.ts:24](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/project.ts#L24)
 
 ___
 
@@ -482,7 +517,7 @@ ___
 
 ##### Defined in
 
-[objects/project.ts:23](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L23)
+[objects/project.ts:33](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/project.ts#L33)
 
 ___
 
@@ -492,7 +527,7 @@ ___
 
 ##### Defined in
 
-[objects/project.ts:22](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L22)
+[objects/project.ts:32](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/project.ts#L32)
 
 ___
 
@@ -500,19 +535,31 @@ ___
 
 • **id**: `number`
 
+The unique ID of the project.
+
 ##### Defined in
 
-[objects/project.ts:16](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L16)
+[objects/project.ts:22](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/project.ts#L22)
+
+___
+
+#### loggedOutPostVisibility
+
+• **loggedOutPostVisibility**: [`Privacy`](#enumsprivacymd)
+
+##### Defined in
+
+[objects/project.ts:39](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/project.ts#L39)
 
 ___
 
 #### privacy
 
-• **privacy**: `string`
+• **privacy**: [`Privacy`](#enumsprivacymd)
 
 ##### Defined in
 
-[objects/project.ts:24](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L24)
+[objects/project.ts:34](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/project.ts#L34)
 
 ___
 
@@ -522,7 +569,7 @@ ___
 
 ##### Defined in
 
-[objects/project.ts:26](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L26)
+[objects/project.ts:36](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/project.ts#L36)
 
 ___
 
@@ -532,7 +579,7 @@ ___
 
 ##### Defined in
 
-[objects/project.ts:25](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L25)
+[objects/project.ts:35](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/project.ts#L35)
 
 ### Methods
 
@@ -557,7 +604,7 @@ The ID of the attachment.
 
 ##### Defined in
 
-[objects/project.ts:174](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L174)
+[objects/project.ts:194](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/project.ts#L194)
 
 ▸ **addAttachment**(`post`, `filename`, `mimeType`, `attachment`, `width`, `height`): `Promise`\<`number`\>
 
@@ -582,7 +629,7 @@ The ID of the attachment.
 
 ##### Defined in
 
-[objects/project.ts:185](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L185)
+[objects/project.ts:205](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/project.ts#L205)
 
 ___
 
@@ -606,7 +653,7 @@ The post with its postId set.
 
 ##### Defined in
 
-[objects/project.ts:100](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L100)
+[objects/project.ts:120](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/project.ts#L120)
 
 ___
 
@@ -630,7 +677,7 @@ The post with its postId set.
 
 ##### Defined in
 
-[objects/project.ts:84](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L84)
+[objects/project.ts:104](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/project.ts#L104)
 
 ___
 
@@ -652,7 +699,7 @@ Deletes a post from the project.
 
 ##### Defined in
 
-[objects/project.ts:115](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L115)
+[objects/project.ts:135](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/project.ts#L135)
 
 ___
 
@@ -681,7 +728,7 @@ An array of TimelinePosts from the project.
 
 ##### Defined in
 
-[objects/project.ts:323](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L323)
+[objects/project.ts:343](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/project.ts#L343)
 
 ___
 
@@ -703,7 +750,7 @@ Gives a like from this project to a post.
 
 ##### Defined in
 
-[objects/project.ts:289](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L289)
+[objects/project.ts:309](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/project.ts#L309)
 
 ___
 
@@ -727,7 +774,7 @@ In the future, this function will also accept a number as the first argument, wh
 
 ##### Defined in
 
-[objects/project.ts:154](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L154)
+[objects/project.ts:174](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/project.ts#L174)
 
 ___
 
@@ -749,7 +796,7 @@ Removes a like from this project to a post.
 
 ##### Defined in
 
-[objects/project.ts:305](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L305)
+[objects/project.ts:325](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/project.ts#L325)
 
 ___
 
@@ -772,7 +819,7 @@ Updates a post in the project.
 
 ##### Defined in
 
-[objects/project.ts:132](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/project.ts#L132)
+[objects/project.ts:152](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/project.ts#L152)
 
 
 <a name="classesusermd"></a>
@@ -793,6 +840,11 @@ This class is not used for any other users because the Cohost API does not provi
 - [id](#id)
 - [projects](#projects)
 
+#### Methods
+
+- [liked](#liked)
+- [switchProject](#switchproject)
+
 ### Properties
 
 #### email
@@ -803,7 +855,7 @@ The email address of this user.
 
 ##### Defined in
 
-[objects/user.ts:16](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/user.ts#L16)
+[objects/user.ts:17](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/user.ts#L17)
 
 ___
 
@@ -815,7 +867,7 @@ The unique ID of this user.
 
 ##### Defined in
 
-[objects/user.ts:14](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/user.ts#L14)
+[objects/user.ts:15](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/user.ts#L15)
 
 ___
 
@@ -827,7 +879,53 @@ The projects that this user is able to edit.
 
 ##### Defined in
 
-[objects/user.ts:12](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/user.ts#L12)
+[objects/user.ts:13](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/user.ts#L13)
+
+### Methods
+
+#### liked
+
+▸ **liked**(`post`): `any`
+
+Checks if the current project has liked a post. Use `switchProject()` to change the current project.
+
+##### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `post` | `number` \| [`Post`](#classespostmd) | The post to check if the project has liked. |
+
+##### Returns
+
+`any`
+
+Whether the project has liked the post.
+
+##### Defined in
+
+[objects/user.ts:39](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/user.ts#L39)
+
+___
+
+#### switchProject
+
+▸ **switchProject**(`project`): `void`
+
+Switches the currently active project to the given project. This is relevant for API calls related to notifications and getting the "liked" state of posts.
+
+##### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `project` | [`Project`](#classesprojectmd) | The project to switch to. |
+
+##### Returns
+
+`void`
+
+##### Defined in
+
+[objects/user.ts:30](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/user.ts#L30)
 
 # Enums
 
@@ -855,7 +953,7 @@ Whether a post is a draft or published.
 
 ##### Defined in
 
-[objects/post.ts:7](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/post.ts#L7)
+[objects/post.ts:7](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/post.ts#L7)
 
 ___
 
@@ -865,4 +963,38 @@ ___
 
 ##### Defined in
 
-[objects/post.ts:8](https://github.com/ApexDevelopment/cohost-api/blob/43755ae/objects/post.ts#L8)
+[objects/post.ts:8](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/post.ts#L8)
+
+
+<a name="enumsprivacymd"></a>
+
+[cohost-api](../README.md) / [Exports](../modules.md) / Privacy
+
+## Enumeration: Privacy
+
+### Table of contents
+
+#### Enumeration Members
+
+- [PRIVATE](#private)
+- [PUBLIC](#public)
+
+### Enumeration Members
+
+#### PRIVATE
+
+• **PRIVATE** = ``"private"``
+
+##### Defined in
+
+[objects/project.ts:10](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/project.ts#L10)
+
+___
+
+#### PUBLIC
+
+• **PUBLIC** = ``"public"``
+
+##### Defined in
+
+[objects/project.ts:9](https://github.com/ApexDevelopment/cohost-api/blob/647e5e0/objects/project.ts#L9)

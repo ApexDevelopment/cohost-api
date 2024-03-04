@@ -5,6 +5,11 @@ import path = require("path");
 
 import { Post, TimelinePost, PostState } from "./post.js";
 
+enum Privacy {
+  PUBLIC = "public",
+  PRIVATE = "private",
+}
+
 /**
  * A class representing a project on Cohost. A user can have multiple projects.
  *
@@ -13,19 +18,27 @@ import { Post, TimelinePost, PostState } from "./post.js";
 class Project {
   /* @hidden */
   private trpc: any;
+  /* The unique ID of the project. */
   id: number;
+  /* The handle of the project, without the @. */
   handle: string;
+  /* The display name, which shows up on the timeline. */
   displayName: string;
+  /* The project subheading. */
   dek: string;
+  /* The description/bio of the project. */
   description: string;
   avatarURL: string;
   headerURL: string;
   headerPreviewURL: string;
-  privacy: string;
+  privacy: Privacy;
   url: string;
   pronouns: string;
   flags: string[];
   avatarShape: string;
+  loggedOutPostVisibility: Privacy;
+  frequentlyUsedTags: string[];
+  atomFeedURL: string;
 
   /* @hidden */
   constructor(
@@ -44,6 +57,8 @@ class Project {
       pronouns,
       flags,
       avatarShape,
+      loggedOutPostVisibility,
+      frequentlyUsedTags,
     }: {
       projectId: number;
       handle: string;
@@ -53,11 +68,13 @@ class Project {
       avatarURL: string;
       headerURL: string;
       headerPreviewURL: string;
-      privacy: string;
+      privacy: Privacy;
       url: string;
       pronouns: string;
       flags: string[];
       avatarShape: string;
+      loggedOutPostVisibility: Privacy;
+      frequentlyUsedTags: string[];
     },
   ) {
     this.trpc = trpc;
@@ -74,6 +91,9 @@ class Project {
     this.pronouns = pronouns;
     this.flags = flags;
     this.avatarShape = avatarShape;
+    this.loggedOutPostVisibility = loggedOutPostVisibility;
+    this.frequentlyUsedTags = frequentlyUsedTags;
+    this.atomFeedURL = `https://cohost.org/@${handle}/rss/public.atom`;
   }
 
   /**
@@ -367,4 +387,4 @@ class Project {
   }
 }
 
-export { Project };
+export { Project, Privacy };
