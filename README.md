@@ -23,7 +23,7 @@ async function demo() {
     .build();
 
   // Send to Cohost
-  user?.projects[0].createDraft(); // or use .createPost() to publish it immediately
+  user?.projects[0].createDraft(post); // or use .createPost() to publish it immediately
 
   // Attach a file
   // This must be done after the post is created/drafted due to how the Cohost API works
