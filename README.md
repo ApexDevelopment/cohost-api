@@ -16,6 +16,16 @@ const client = new Client();
 async function demo() {
   // Log in to Cohost
   let user = await client.login("EMAIL_ADDRESS", "YOUR_PASSWORD");
+  // Get the first project
+  let project = user?.projects[0];
+
+  if (!project) {
+    console.log("Couldn't log in :(");
+    return;
+  }
+
+  // Switch to the project (not always necessary, but good practice as some endpoints require it)
+  user?.switchProject(project);
 
   // Create new post
   let post = new PostBuilder();
@@ -23,11 +33,11 @@ async function demo() {
     .build();
 
   // Send to Cohost
-  user?.projects[0].createDraft(post); // or use .createPost() to publish it immediately
+  project.createDraft(post); // or use .createPost() to publish it immediately
 
   // Attach a file
   // This must be done after the post is created/drafted due to how the Cohost API works
-  user?.projects[0].addAttachment(post, "file.png");
+  project.addAttachment(post, "file.png");
 }
 
 demo(); // Check your Cohost page!
@@ -47,13 +57,13 @@ The API reference can be found in [this document](reference.md).
 - Editing existing posts & post drafts
 - Liking and unliking posts
 - Getting a list of a project's posts
+- Getting a list of followers for a project
+- Getting a list of projects followed by your project
 
 ### Not working
 
 - Editing a project's profile information
 - Sharing other users' posts to your project (i.e. reblogging)
-- Getting the list of followers for a project
-- Getting the list of projects followed by your project
 - Getting a project's notifications
 - Anything else not explicitly mentioned
 

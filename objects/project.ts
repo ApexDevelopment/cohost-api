@@ -4,10 +4,19 @@ import fs = require("fs");
 import path = require("path");
 
 import { Post, TimelinePost, PostState } from "./post.js";
+import { Client } from "./client.js";
 
 enum Privacy {
   PUBLIC = "public",
   PRIVATE = "private",
+}
+
+enum SortOrder {
+  RECENTLY_POSTED = "recently-posted",
+  FOLLOWED_ASC = "followed-asc",
+  FOLLOWED_DESC = "followed-desc",
+  ALPHA_ASC = "alpha-asc",
+  ALPHA_DESC = "alpha-desc",
 }
 
 /**
@@ -17,7 +26,7 @@ enum Privacy {
  */
 class Project {
   /* @hidden */
-  private trpc: any;
+  protected client: Client;
   /* The unique ID of the project. */
   id: number;
   /* The handle of the project, without the @. */
@@ -42,7 +51,7 @@ class Project {
 
   /* @hidden */
   constructor(
-    trpc: any,
+    client: Client,
     {
       projectId,
       handle,
@@ -77,7 +86,7 @@ class Project {
       frequentlyUsedTags: string[];
     },
   ) {
-    this.trpc = trpc;
+    this.client = client;
     this.id = projectId;
     this.handle = handle;
     this.displayName = displayName;
@@ -97,18 +106,71 @@ class Project {
   }
 
   /**
+   * Gets a page of posts from the project. The Cohost API returns 20 posts per page.
+   * @param page The page of posts to get. Defaults to 0.
+   * @param options Options for filtering the returned posts.
+   * @returns An array of TimelinePosts from the project.
+   */
+  async getPosts(
+    page: number = 0,
+    options: {
+      pinnedPostsAtTop: boolean;
+      hideReplies: boolean;
+      hideShares: boolean;
+      hideAsks: boolean;
+    } = {
+      pinnedPostsAtTop: true,
+      hideReplies: false,
+      hideShares: false,
+      hideAsks: false,
+    },
+  ) {
+    let response = await this.client.trpc.posts.profilePosts.query({
+      projectHandle: this.handle,
+      page,
+      options,
+    });
+
+    return response.posts.map((post: any) => {
+      return new TimelinePost(
+        this.handle,
+        post.postId,
+        post.postState,
+        post.headline,
+        post.effectiveAdultContent,
+        post.blocks,
+        post.cws,
+        post.tags,
+        post.publishedAt,
+        post.filename,
+        post.numComments,
+        post.pinned,
+        post.commentsLocked,
+        post.sharesLocked,
+        post.plainTextBody,
+        this,
+        post.singlePostPageUrl,
+        post.isLiked,
+        post.responseToAskId,
+        post.hasCohostPlus,
+      );
+    });
+  }
+}
+
+/**
+ * A class representing a project on Cohost that the user has editing privileges for.
+ */
+class EditedProject extends Project {
+  /**
    * Publishes a post to the project.
    * @param post The post to publish.
    * @returns The post with its postId set.
    */
   async createPost(post: Post) {
-    if (!this.trpc) {
-      throw new Error("User does not have ownership of this project.");
-    }
-
     post.projectHandle = this.handle;
     post.content.postState = PostState.PUBLISHED;
-    post.postId = (await this.trpc.posts.create.mutate(post)).postId;
+    post.postId = (await this.client.trpc.posts.create.mutate(post)).postId;
     return post;
   }
 
@@ -118,13 +180,9 @@ class Project {
    * @returns The post with its postId set.
    */
   async createDraft(post: Post) {
-    if (!this.trpc) {
-      throw new Error("User does not have ownership of this project.");
-    }
-
     post.projectHandle = this.handle;
     post.content.postState = PostState.DRAFT;
-    post.postId = (await this.trpc.posts.create.mutate(post)).postId;
+    post.postId = (await this.client.trpc.posts.create.mutate(post)).postId;
     return post;
   }
 
@@ -133,12 +191,8 @@ class Project {
    * @param post The post or ID of the post to delete.
    */
   async deletePost(post: Post | number) {
-    if (!this.trpc) {
-      throw new Error("User does not have ownership of this project.");
-    }
-
     let postId = post instanceof Post ? post.postId : post;
-    await this.trpc.posts.delete.mutate({
+    await this.client.trpc.posts.delete.mutate({
       projectHandle: this.handle,
       postId,
     });
@@ -150,13 +204,9 @@ class Project {
    * @param newPost The new post data.
    */
   async updatePost(postToUpdate: Post | number, newPost: Post) {
-    if (!this.trpc) {
-      throw new Error("User does not have ownership of this project.");
-    }
-
     let postId =
       postToUpdate instanceof Post ? postToUpdate.postId : postToUpdate;
-    await this.trpc.posts.update.mutate({
+    await this.client.trpc.posts.update.mutate({
       projectHandle: this.handle,
       postId,
       content: newPost.content,
@@ -172,11 +222,7 @@ class Project {
    * @param draftPost The draft post to publish.
    */
   async publishDraft(draftPost: Post) {
-    if (!this.trpc) {
-      throw new Error("User does not have ownership of this project.");
-    }
-
-    await this.trpc.posts.update.mutate({
+    await this.client.trpc.posts.update.mutate({
       projectHandle: this.handle,
       postId: draftPost.postId,
       content: draftPost.content,
@@ -218,10 +264,6 @@ class Project {
     width?: number,
     height?: number,
   ): Promise<number> {
-    if (!this.trpc) {
-      throw new Error("User does not have ownership of this project.");
-    }
-
     if (!post.postId) {
       throw new Error(
         "Post must first be published or drafted before an attachment can be added.",
@@ -244,7 +286,7 @@ class Project {
       height = dimensions.height;
     }
 
-    let response = await this.trpc.posts.attachment.start.mutate({
+    let response = await this.client.trpc.posts.attachment.start.mutate({
       projectHandle: this.handle,
       postId: post.postId,
       filename: filepathOrName,
@@ -268,13 +310,13 @@ class Project {
       body: formData,
     });
 
-    let finishResponse = await this.trpc.posts.attachment.finish.mutate({
+    let finishResponse = await this.client.trpc.posts.attachment.finish.mutate({
       projectHandle: this.handle,
       postId: post.postId,
       attachmentId: response.attachmentId,
     });
 
-    await this.trpc.posts.update.mutate({
+    await this.client.trpc.posts.update.mutate({
       projectHandle: this.handle,
       postId: post.postId,
       content: {
@@ -307,12 +349,8 @@ class Project {
    * @param post The post to like.
    */
   async likePost(post: Post | number) {
-    if (!this.trpc) {
-      throw new Error("User does not have ownership of this project.");
-    }
-
     let postId = post instanceof Post ? post.postId : post;
-    await this.trpc.relationships.like.mutate({
+    await this.client.trpc.relationships.like.mutate({
       fromProjectId: this.id,
       toPostId: postId,
     });
@@ -323,68 +361,12 @@ class Project {
    * @param post The post to unlike.
    */
   async unlikePost(post: Post | number) {
-    if (!this.trpc) {
-      throw new Error("User does not have ownership of this project.");
-    }
-
     let postId = post instanceof Post ? post.postId : post;
-    await this.trpc.relationships.unlike.mutate({
+    await this.client.trpc.relationships.unlike.mutate({
       fromProjectId: this.id,
       toPostId: postId,
     });
   }
-
-  /**
-   * Gets a page of posts from the project. The Cohost API returns 20 posts per page.
-   * @param page The page of posts to get. Defaults to 0.
-   * @param options Options for filtering the returned posts.
-   * @returns An array of TimelinePosts from the project.
-   */
-  async getPosts(
-    page: number = 0,
-    options: {
-      pinnedPostsAtTop: boolean;
-      hideReplies: boolean;
-      hideShares: boolean;
-      hideAsks: boolean;
-    } = {
-      pinnedPostsAtTop: true,
-      hideReplies: false,
-      hideShares: false,
-      hideAsks: false,
-    },
-  ) {
-    let response = await this.trpc.posts.profilePosts.query({
-      projectHandle: this.handle,
-      page,
-      options,
-    });
-
-    return response.posts.map((post: any) => {
-      return new TimelinePost(
-        this.handle,
-        post.postId,
-        post.postState,
-        post.headline,
-        post.effectiveAdultContent,
-        post.blocks,
-        post.cws,
-        post.tags,
-        post.publishedAt,
-        post.filename,
-        post.numComments,
-        post.pinned,
-        post.commentsLocked,
-        post.sharesLocked,
-        post.plainTextBody,
-        this,
-        post.singlePostPageUrl,
-        post.isLiked,
-        post.responseToAskId,
-        post.hasCohostPlus,
-      );
-    });
-  }
 }
 
-export { Project, Privacy };
+export { EditedProject, Project, Privacy, SortOrder };

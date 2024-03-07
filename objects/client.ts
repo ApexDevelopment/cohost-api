@@ -8,14 +8,43 @@ import { Project } from "./project.js";
 const COHOST_API_URL = "https://cohost.org/api/v1";
 const COHOST_TRPC_URL = "https://cohost.org/api/v1/trpc";
 
+class ClientRuntime {
+  token: string | null = null;
+  trpc: any;
+
+  async fetch(input: string | URL | Request, init: RequestInit | undefined) {
+    let res = await fetch(input, init);
+
+    if (res.headers.get("set-cookie")) {
+      const cookie = res.headers.get("set-cookie")?.split(";")[0] || null;
+
+      if (cookie?.startsWith("connect.sid=")) {
+        this.token = cookie;
+      }
+    }
+
+    return res;
+  }
+
+  headers() {
+    if (!this.token) return {};
+    return {
+      Cookie: this.token,
+    };
+  }
+}
+
 /**
  * A Cohost API client. Instantiate this class to interact with the Cohost API.
  */
 class Client {
   /* @hidden */
-  private trpc: any;
-  /* The session token for the client. */
-  private token: string | null = null;
+  private runtime: ClientRuntime = new ClientRuntime();
+  /* @hidden */
+  get trpc() {
+    return this.runtime.trpc;
+  }
+
   /* Whether the client is logged in. */
   loggedIn = false;
 
@@ -26,33 +55,17 @@ class Client {
    * Creates a new Cohost API client. Requires no arguments.
    */
   constructor() {
-    this.trpc = createTRPCClient<AppRouter>({
+    let trpcClient = createTRPCClient<AppRouter>({
       links: [
         httpBatchLink({
           url: COHOST_TRPC_URL,
-          fetch: async (input, init) => {
-            let res = await fetch(input, init);
-
-            if (res.headers.get("set-cookie")) {
-              const cookie =
-                res.headers.get("set-cookie")?.split(";")[0] || null;
-
-              if (cookie?.startsWith("connect.sid=")) {
-                this.token = cookie;
-              }
-            }
-
-            return res;
-          },
-          headers: () => {
-            if (!this.token) return {};
-            return {
-              Cookie: this.token,
-            };
-          },
+          fetch: this.runtime.fetch.bind(this.runtime),
+          headers: this.runtime.headers.bind(this.runtime),
         }),
       ],
     });
+
+    this.runtime.trpc = trpcClient;
   }
 
   /**
@@ -79,14 +92,14 @@ class Client {
     });
 
     if (loginResponse.userId) {
-      this.user = new User(this.trpc, loginResponse.userId, email);
+      this.user = new User(this, loginResponse.userId, email);
 
       let projects = (await this.trpc.projects.listEditedProjects.query())
         .projects;
 
       if (projects) {
         this.user.projects = projects.map((project: any) => {
-          return new Project(this.trpc, project);
+          return new Project(this, project);
         });
 
         this.loggedIn = true;
@@ -96,6 +109,16 @@ class Client {
     }
 
     return this.user;
+  }
+
+  /* @hidden */
+  async fetch(input: string) {
+    // This gives the server the session cookie! Do not use unless you know what you're doing!
+    const options: any = {
+      headers: this.runtime.headers(),
+    };
+
+    return await this.runtime.fetch(input, options);
   }
 }
 
